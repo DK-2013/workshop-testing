@@ -1,10 +1,10 @@
 install: install-deps install-flow-typed
 
 run:
-	npx babel-node -- 'src/bin/weather.js' weather berlin
+	npx babel-node -- 'src/bin/weather.js' berlin
 
 install-deps:
-	npm install
+	npm i
 
 install-flow-typed:
 	npx flow-typed install
@@ -23,6 +23,10 @@ lint:
 	npx eslint .
 
 publish:
-	npm publish
+	npm publish --dry-run
+
+republish:
+	npm publish --dry-run
+	npm link
 
 .PHONY: test
